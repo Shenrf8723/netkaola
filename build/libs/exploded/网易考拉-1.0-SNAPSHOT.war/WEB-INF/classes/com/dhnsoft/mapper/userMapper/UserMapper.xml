@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.dhnsoft.mapper.userMapper.UserMapper">
+        <!--验证用户登录-->
+        <select id="userLogin" parameterType="user" resultType="Integer">
+            select count(*) from user where username=#{username} and password=#{password}
+        </select>
+        <!--验证注册时用户名是否重复-->
+        <select id="signRepetition" parameterType="String" resultType="Integer">
+            select count(*) from user where username=#{username}
+        </select>
+        <!--注册用户-->
+        <insert id="addUserMsg" parameterType="user" keyProperty="id" useGeneratedKeys="true">
+            insert into user values(null,#{username},#{password},#{tel})
+        </insert>
+</mapper>

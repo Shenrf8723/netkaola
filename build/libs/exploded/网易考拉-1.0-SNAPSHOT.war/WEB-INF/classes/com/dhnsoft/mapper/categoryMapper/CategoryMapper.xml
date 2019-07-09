@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.dhnsoft.mapper.categoryMapper.CategoryMapper">
+    <!--查询商品分类信息-->
+    <select id="findCommodity" resultType="Category">
+      SELECT * from category;
+    </select>
+
+    <update id="updateCategory" parameterType="Category">
+        update category
+        <set>
+            <if test="cname !=null and cname !=''">
+                cname=#{cname},
+            </if>
+        </set>
+        where cid=#{cid}
+    </update>
+    <delete id="deleteCategory" parameterType="String">
+        delete from category where cid=#{cid}
+    </delete>
+
+    <insert id="addCategory" parameterType="Category">
+        insert into category(cid,cname) values(#{cid},#{cname})
+    </insert>
+</mapper>

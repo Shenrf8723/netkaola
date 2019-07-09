@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dhnsoft.jdbc.TestApp" tests="6" skipped="3" failures="0" errors="0" timestamp="2019-04-02T01:56:25" hostname="RJ511-015" time="1.966">
+  <properties/>
+  <testcase name="TestCreate" classname="com.dhnsoft.jdbc.TestApp" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="TestDelete" classname="com.dhnsoft.jdbc.TestApp" time="1.465"/>
+  <testcase name="TestUpdate" classname="com.dhnsoft.jdbc.TestApp" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="TestQueryById" classname="com.dhnsoft.jdbc.TestApp" time="0.266"/>
+  <testcase name="TestAdd" classname="com.dhnsoft.jdbc.TestApp" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="TestQuery" classname="com.dhnsoft.jdbc.TestApp" time="0.228"/>
+  <system-out><![CDATA[运行失败
+Account{id=2, username='李四', balance=1000.0}
+Account{id=1, username='zs', balance=1000.0}
+Account{id=2, username='李四', balance=1000.0}
+]]></system-out>
+  <system-err><![CDATA[四月 02, 2019 9:56:25 上午 org.springframework.context.support.ClassPathXmlApplicationContext prepareRefresh
+信息: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1612ad00: startup date [Tue Apr 02 09:56:25 CST 2019]; root of context hierarchy
+四月 02, 2019 9:56:25 上午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [bean1.xml]
+四月 02, 2019 9:56:26 上午 org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+信息: Loaded JDBC driver: com.mysql.jdbc.Driver
+Tue Apr 02 09:56:26 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+四月 02, 2019 9:56:27 上午 org.springframework.context.support.ClassPathXmlApplicationContext prepareRefresh
+信息: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7b8bc148: startup date [Tue Apr 02 09:56:27 CST 2019]; root of context hierarchy
+四月 02, 2019 9:56:27 上午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [bean1.xml]
+四月 02, 2019 9:56:27 上午 org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+信息: Loaded JDBC driver: com.mysql.jdbc.Driver
+Tue Apr 02 09:56:27 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+四月 02, 2019 9:56:27 上午 org.springframework.context.support.ClassPathXmlApplicationContext prepareRefresh
+信息: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@70de20bb: startup date [Tue Apr 02 09:56:27 CST 2019]; root of context hierarchy
+四月 02, 2019 9:56:27 上午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [bean1.xml]
+四月 02, 2019 9:56:27 上午 org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+信息: Loaded JDBC driver: com.mysql.jdbc.Driver
+Tue Apr 02 09:56:27 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+]]></system-err>
+</testsuite>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.dhnsoft.mapper.commodityMapper.CommodityMapper">
+    <select id="findPageCommodity" resultType="Commodity">
+        select * from commodity
+        <where>
+            <if test="cid!=null and cid!=''">
+                and cid=#{cid}
+            </if>
+            <if test="name!=null and name!=''">
+                and name like concat('%',#{name},'%')
+            </if>
+        </where>
+        limit #{currentPage},#{pageSize};
+    </select>
+    <select id="findPageNum" resultType="Integer">
+        select count(*) from commodity <where>
+        <if test="cid!=null and cid!=''">
+            and cid=#{cid}
+        </if>
+        <if test="name!=null and name!=''">
+            and name like concat('%',#{name},'%')
+        </if>
+    </where>
+    </select>
+    <update id="updateCommodity" parameterType="Commodity">
+        update commodity
+        <set>
+            <if test="cid !=null and cid !=''">
+                cid=#{cid},
+            </if>
+            <if test="name !=null and name !=''">
+                name=#{name},
+            </if>
+            <if test="title !=null and title !=''">
+                title=#{title},
+            </if>
+            <if test="price !=null and price !=''">
+                price=#{price},
+            </if>
+            <if test="descript !=null and descript !=''">
+                descript=#{descript},
+            </if>
+            <if test="img !=null and img !=''">
+                img=#{img},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteCommidity" parameterType="Integer">
+        DELETE from commodity where id=#{id}
+    </delete>
+
+    <insert id="addCommidity" parameterType="Commodity">
+        insert into commodity value (null,#{cid},#{name},#{title},#{price},#{descript},#{img})
+    </insert>
+    <select id="findCommidtiyByCid" resultType="Commodity" parameterType="String">
+        select * from commodity  where cid=#{cid} limit 8;
+    </select>
+
+    <select id="findCommidtiyById" parameterType="Integer" resultType="Commodity">
+        select * from commodity where id=#{id};
+    </select>
+    
+    <select id="findCommodity" resultType="commodity">
+        select * from commodity;
+    </select>
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.dhnsoft.mapper.adminMapper.AdminMapper">
+        <!--验证管理员登录并且获取管理员信息-->
+        <select id="findAdminMsg" parameterType="AdminIstrator" resultType="AdminIstrator">
+            select * from administrator where name=#{name} and password=#{password}
+        </select>
+</mapper>

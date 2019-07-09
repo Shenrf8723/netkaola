@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </appenders>
+
+    <loggers>
+        <!-- 下面是打印通过log4j2打印出mybatis语句的配置-->
+        <logger name="com.dhnsoft">
+            <level>DEBUG</level>
+        </logger>
+
+        <!-- root logger，任何其它的logger最终都相当于继承自 root logger -->
+        <!--level为DEBUG或INFO-->
+        <root level="INFO">
+            <appenderRef ref="Console" />
+        </root>
+    </loggers>
+</configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.dhnsoft.mapper.shoppingMapper.ShoppingMapper">
+    <select id="findShoppingMsg" resultType="Shopping">
+        select * from shopping
+    </select>
+
+    <insert id="addShopping" parameterType="Shopping">
+        insert into shopping(commodity_name,commodity_price,commodity_img) values(#{commodity_name},#{commodity_price},#{commodity_img})
+    </insert>
+
+    <delete id="delShopping" parameterType="Integer">
+        delete from shopping where id=#{id}
+    </delete>
+</mapper>
